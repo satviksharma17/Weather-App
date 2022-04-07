@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>headerlinks}}
+</head>
+
+<body>
+
+    <!-- Main menu -->
+    
+    {{>navbar}}
+
+
+    <!-- main header -->
+    <div class="container-fluid main_header">
+
+        <div class="row">
+
+            <div class="col-md-10 col-12 mx-auto">
+
+                <div class="main_content">
+                    <form class="temp_form">
+                        <input type="text" id="cityname" placeholder="Enter Your City Name" autocomplete="off">
+                        <input type="submit" value="search" id="submitBtn"> 
+                    </form>
+                </div>
+
+                <div class="temp_information">
+
+                    <div class="top_layer">
+                        <p id="day">Tuesday</p>
+                        <p id="today_date">13 OCT</p>
+                    </div>
+
+                    <div class="main_layer">
+                        <p id="city_name">Get Your Output Here</p>
+                        <div class="middle_layer data_hide">
+                            <p id="temp"><span id="temp_real">0</span><sup>o</sup>C</p>
+                            <p id="temp_status"> <i class="fa fa-cloud" aria-hidden="true"></i> </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    {{>footer}}
+    <script src="js/main.js"></script>
+    <script>
+        var day = document.getElementById("day");
+        var today_date = document.getElementById("today_date");
+        const date_today = new Date();
+
+        const getCurrDay = () => {
+            let WeekDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+            return WeekDays[date_today.getDay()]; 
+        }
+        const getCurrDate = () => {
+            return date_today.getDate();
+        }
+        const getCurrMonth = () => {
+            const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+            return month[date_today.getMonth()];
+        }
+        
+         day.innerHTML = getCurrDay();
+         today_date.innerHTML=`${getCurrDate()} ${getCurrMonth()}`;
+    </script>
+</body>
+
+</html>

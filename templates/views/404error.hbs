@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>headerlinks}}
+</head>
+
+<body>
+
+    <!-- Main menu -->
+    {{>navbar}}
+
+
+    <!-- main header -->
+    <div class="container-fluid main_header">
+
+        <div class="row">
+
+            <div class="col-md-10 col-12 mx-auto">
+
+                <div class="row">
+                    <!-- left side view -->
+                    <div class="col-md-12 col-12 main_header_left align-items-center">
+                        <figure class="errimg">
+                            <img src="images/404img.webp" alt="My Image" class="img-fluid" title="Aayush">
+                        </figure>
+                    
+                        <p>{{errMsg}}</p>
+                        <a href="/"><button>go back</button></a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+   {{>footer}}
+</body>
+
+</html>
